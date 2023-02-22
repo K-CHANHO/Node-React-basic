@@ -3,6 +3,9 @@ const app = express()
 const port = 5000
 
 const bodyParser = require('body-parser');
+
+const config = require('./config/key');
+
 const { User } = require("./models/User");
 
 
@@ -14,12 +17,12 @@ app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false)
-mongoose.connect('mongodb+srv://cksgh1565:1234@chanosmongo.q1ji4hd.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(config.mongoURI, {
 }).then(() => console.log('MongoDB Connected...'))
 .catch(err => console.log(err))
 
 
-app.get('/', (req, res) => res.send('Hello World!~~ 안녕하세요~~'))
+app.get('/', (req, res) => res.send('Hello World!~~'))
 
 app.post('/register', (req, res) => {
 
