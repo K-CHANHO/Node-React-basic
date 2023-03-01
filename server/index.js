@@ -8,7 +8,7 @@ const cookieparser = require('cookie-parser');
 const config = require('./config/key');
 
 const { User } = require("./models/User");
-const {auth} = require("./middleware/auth");
+const { auth } = require("./middleware/auth");
 
 
 // application/x-www-form-urlencoded
@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieparser());
 
+app.use(express.urlencoded({ extended: true}))
 
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false)
