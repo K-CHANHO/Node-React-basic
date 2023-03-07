@@ -99,6 +99,14 @@ app.get('/api/users/logout', auth, (req, res) => {
     })
 })
 
+app.get('/api/users/login', auth, (req, res) => {
+
+    return res.status(200).send({
+        success: true
+    })
+
+})
+
 app.get('/api/hello', (req, res) => res.send('hello World!'))
 
 

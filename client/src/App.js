@@ -11,6 +11,7 @@ import RegisterPage from './components/views/RegisterPage/RegisterPage';
 
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
